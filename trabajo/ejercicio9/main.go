@@ -21,7 +21,6 @@ func NombresBaratos(productos []Producto, limite float64) []string {
 			masBaratos = append(masBaratos, v.Nombre)
 		}
 	}
-
 	return masBaratos
 }
 
@@ -36,17 +35,13 @@ func PromedioDeCategoria(productos []Producto, categoria string) float64 {
 
 	for i := 0; i < len(productos); i++ {
 		if categoria == productos[i].Categoria {
-
 			cantidadDeProductos = cantidadDeProductos + 1
-
 			sumaDePrecios = sumaDePrecios + productos[i].Precio
 		}
-
 	}
 	if cantidadDeProductos == 0 {
 		return 0
 	}
-
 	return sumaDePrecios / cantidadDeProductos
 }
 
