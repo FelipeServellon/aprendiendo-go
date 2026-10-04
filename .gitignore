@@ -1,0 +1,18 @@
+# Uso personal (no se publica)
+memoria/
+entrada/
+archivo/
+.agents/
+.claude/
+AGENTS.md
+CLAUDE.md
+
+# Binarios generados por go build
+/ejercicio*
+!/trabajo/
+*.exe
+*.test
+*.out
+
+# Sistema
+.DS_Store
