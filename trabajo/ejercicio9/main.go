@@ -17,7 +17,7 @@ func NombresBaratos(productos []Producto, limite float64) []string {
 	masBaratos := []string{}
 
 	for _, v := range productos {
-		if v.Precio <= limite {
+		if v.Precio < limite {
 			masBaratos = append(masBaratos, v.Nombre)
 		}
 	}
@@ -51,7 +51,17 @@ func PromedioDeCategoria(productos []Producto, categoria string) float64 {
 // Si ninguna se repite, devuelve una lista vacía (no nil).
 // Ej: ["pan","leche","pan","huevo","leche","pan"] -> ["pan","leche"]
 func Repetidos(lista []string) []string {
-	return nil
+	vistos := map[string]int{}
+	repetidos := []string{}
+
+	for _, item := range lista {
+		vistos[item]++
+		if vistos[item] == 2 {
+			repetidos = append(repetidos, item)
+		}
+	}
+
+	return repetidos
 }
 
 func main() {
