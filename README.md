@@ -13,6 +13,7 @@ Registro de mi aprendizaje de Go desde cero. Cada carpeta es un ejercicio; el hi
 | `ejercicio7` | Maps y structs: agrupar, filtrar, quitar repetidos |
 | `ejercicio8` | Quitar repetidos con maps |
 | `ejercicio9` | Structs, promedios y repetidos |
+| `ejercicio10` | Repaso: salida anticipada, map de vistos, contar y filtrar, map como catálogo *(en progreso)* |
 
 ## Ejecutar
 
