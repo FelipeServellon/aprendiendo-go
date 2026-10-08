@@ -28,7 +28,17 @@ func HayMasCaroQue(productos []Producto, limite float64) bool {
 // Si no hay productos, devuelve una lista vacía (no nil).
 // Ej: -> ["comestibles", "empaque", "limpieza"]
 func CategoriasUnicas(productos []Producto) []string {
-	return nil
+	vistos := map[string]bool{}
+	categoriasExistentes := []string{}
+
+	for _, categoriaExistente := range productos {
+		if !vistos[categoriaExistente.Categoria] {
+			vistos[categoriaExistente.Categoria] = true
+
+			categoriasExistentes = append(categoriasExistentes, categoriaExistente.Categoria)
+		}
+	}
+	return categoriasExistentes
 }
 
 // EJERCICIO 3 — contar primero, filtrar después
