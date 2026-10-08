@@ -14,6 +14,11 @@ type Producto struct {
 // Ej: límite 28 -> true (Azúcar cuesta 30)
 // Ej: límite 30 -> false
 func HayMasCaroQue(productos []Producto, limite float64) bool {
+	for _, suPrecio := range productos {
+		if suPrecio.Precio > limite {
+			return true
+		}
+	}
 	return false
 }
 
