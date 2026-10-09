@@ -8,11 +8,13 @@ type Producto struct {
 	Precio    float64
 }
 
-// EJERCICIO 1 — salida anticipada
-// HayMasCaroQue devuelve true si AL MENOS UN producto cuesta
-// más que el límite (estrictamente mayor). Si ninguno, false.
-// Ej: límite 28 -> true (Azúcar cuesta 30)
-// Ej: límite 30 -> false
+/*
+EJERCICIO 1 — salida anticipada
+HayMasCaroQue devuelve true si AL MENOS UN producto cuesta
+más que el límite (estrictamente mayor). Si ninguno, false.
+Ej: límite 28 -> true (Azúcar cuesta 30)
+Ej: límite 30 -> false
+*/
 func HayMasCaroQue(productos []Producto, limite float64) bool {
 	for _, suPrecio := range productos {
 		if suPrecio.Precio > limite {
@@ -22,11 +24,13 @@ func HayMasCaroQue(productos []Producto, limite float64) bool {
 	return false
 }
 
-// EJERCICIO 2 — map de vistos + lista de salida
-// CategoriasUnicas devuelve cada categoría una sola vez,
-// en el orden en que aparece por primera vez.
-// Si no hay productos, devuelve una lista vacía (no nil).
-// Ej: -> ["comestibles", "empaque", "limpieza"]
+/*
+EJERCICIO 2 — map de vistos + lista de salida
+CategoriasUnicas devuelve cada categoría una sola vez,
+en el orden en que aparece por primera vez.
+Si no hay productos, devuelve una lista vacía (no nil).
+Ej: -> ["comestibles", "empaque", "limpieza"]
+*/
 func CategoriasUnicas(productos []Producto) []string {
 	vistos := map[string]bool{}
 	categoriasExistentes := []string{}
@@ -41,21 +45,38 @@ func CategoriasUnicas(productos []Producto) []string {
 	return categoriasExistentes
 }
 
-// EJERCICIO 3 — contar primero, filtrar después
-// PalabrasUnicas devuelve las palabras que aparecen EXACTAMENTE una vez,
-// en el orden en que aparecen en la lista.
-// Si todas se repiten, devuelve una lista vacía (no nil).
-// Ej: ["pan","leche","pan","huevo","café","leche"] -> ["huevo","café"]
+/*
+EJERCICIO 3 — contar primero, filtrar después
+PalabrasUnicas devuelve las palabras que aparecen EXACTAMENTE una vez,
+en el orden en que aparecen en la lista.
+Si todas se repiten, devuelve una lista vacía (no nil).
+Ej: ["pan","leche","pan","huevo","café","leche"] -> ["huevo","café"]
+*/
 func PalabrasUnicas(lista []string) []string {
-	return nil
+	vistos := map[string]int{}
+	articulosUnicos := []string{}
+
+	for _, producto := range lista {
+		vistos[producto] = vistos[producto] + 1
+	}
+	for _, i := range lista {
+		if vistos[i] == 1 {
+			articulosUnicos = append(articulosUnicos, i)
+		}
+	}
+
+	return articulosUnicos
 }
 
-// EJERCICIO 4 — map como catálogo
-// DeCategorias devuelve los productos cuya categoría está en la lista
-// de categorías pedidas, en el mismo orden en que aparecen los productos.
-// Si ninguno coincide, devuelve una lista vacía (no nil).
-// Ej: ["limpieza","empaque"] -> Tapas, Cajas, Cloro, Jabón
+/*
+EJERCICIO 4 — map como catálogo
+DeCategorias devuelve los productos cuya categoría está en la lista
+de categorías pedidas, en el mismo orden en que aparecen los productos.
+Si ninguno coincide, devuelve una lista vacía (no nil).
+Ej: ["limpieza","empaque"] -> Tapas, Cajas, Cloro, Jabón
+*/
 func DeCategorias(productos []Producto, categorias []string) []Producto {
+
 	return nil
 }
 
