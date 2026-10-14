@@ -77,7 +77,20 @@ Ej: ["limpieza","empaque"] -> Tapas, Cajas, Cloro, Jabón
 */
 func DeCategorias(productos []Producto, categorias []string) []Producto {
 
-	return nil
+	catalogo := map[string]bool{}
+	resultado := []Producto{}
+
+	for _, v := range categorias {
+		catalogo[v] = true
+	}
+
+	for _, v := range productos {
+		if catalogo[v.Categoria] == true {
+			resultado = append(resultado, v)
+		}
+	}
+
+	return resultado
 }
 
 func main() {
