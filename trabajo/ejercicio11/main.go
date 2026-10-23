@@ -21,7 +21,10 @@ Ej: Dividir(10, 2) -> 5, nil
 Ej: Dividir(10, 0) -> 0, ErrDivisionPorCero
 */
 func Dividir(a, b float64) (float64, error) {
-	return 0, nil
+	if b == 0 {
+		return 0, ErrDivisionPorCero
+	}
+	return a / b, nil
 }
 
 /*
