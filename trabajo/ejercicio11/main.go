@@ -83,7 +83,13 @@ Ej: ["Leche", "Café"]  -> 35, nil
 Ej: ["Leche", "Pizza"] -> 0, ErrNoEncontrado
 */
 func TotalPedido(precios map[string]float64, pedido []string) (float64, error) {
-	return 0, nil
+	
+	BuscarPrecio(precios,range pedido){
+
+	}
+
+
+
 }
 
 func main() {
