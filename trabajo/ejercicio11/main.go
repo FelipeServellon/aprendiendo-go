@@ -37,7 +37,14 @@ Ej: "Muestra" -> 0, nil
 Ej: "Pizza"   -> 0, ErrNoEncontrado
 */
 func BuscarPrecio(precios map[string]float64, nombre string) (float64, error) {
-	return 0, nil
+
+	precio, existencia := precios[nombre]
+
+	if existencia == true {
+		return precio, nil
+	}
+
+	return 0, ErrNoEncontrado
 }
 
 /*
