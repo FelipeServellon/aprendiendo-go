@@ -58,6 +58,19 @@ Ej: stock Leche 5, Vender 3 -> nil (queda 2)
 Ej: stock Leche 5, Vender 9 -> ErrSinStock (sigue en 5)
 */
 func Vender(stock map[string]int, nombre string, cantidad int) error {
+
+	cantidades, existe := stock[nombre]
+
+	if !existe {
+		return ErrNoEncontrado
+	}
+
+	if cantidades < cantidad {
+		return ErrSinStock
+	}
+
+	stock[nombre] = cantidades - cantidad
+
 	return nil
 }
 
