@@ -43,7 +43,6 @@ func BuscarPrecio(precios map[string]float64, nombre string) (float64, error) {
 	if existencia == true {
 		return precio, nil
 	}
-
 	return 0, ErrNoEncontrado
 }
 
@@ -83,13 +82,20 @@ Ej: ["Leche", "Café"]  -> 35, nil
 Ej: ["Leche", "Pizza"] -> 0, ErrNoEncontrado
 */
 func TotalPedido(precios map[string]float64, pedido []string) (float64, error) {
-	
-	BuscarPrecio(precios,range pedido){
+	var total float64
+	var causa error
 
+	for _, articulo := range pedido {
+		cant, err := BuscarPrecio(precios, articulo)
+		if err == nil {
+			total = total + cant
+			causa = err
+		}
+		if err != nil {
+			return 0, err
+		}
 	}
-
-
-
+	return total, causa
 }
 
 func main() {
