@@ -14,7 +14,8 @@ Registro de mi aprendizaje de Go desde cero. Cada carpeta es un ejercicio; el hi
 | `ejercicio8` | Quitar repetidos con maps |
 | `ejercicio9` | Structs, promedios y repetidos |
 | `ejercicio10` | Repaso: salida anticipada, map de vistos, contar y filtrar, map como catálogo |
-| `ejercicio11` | Errores: devolver `(valor, error)`, el `ok` de un map, revisar errores *(en progreso)* |
+| `ejercicio11` | Errores: devolver `(valor, error)`, el `ok` de un map, revisar errores |
+| `ejercicio12` | Punteros (`&`, `*`, `nil`) y constructores *(en progreso)* |
 
 ## Ejecutar
 
