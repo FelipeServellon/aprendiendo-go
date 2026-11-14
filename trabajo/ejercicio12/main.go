@@ -34,6 +34,9 @@ SubirPrecio suma «aumento» al «Precio» del producto original.
 Ej: leche := Producto{"Leche", 10}; SubirPrecio(&leche, 2.5) -> leche.Precio queda en 12.5
 */
 func SubirPrecio(p *Producto, aumento float64) {
+
+	p.Precio = p.Precio + aumento
+
 }
 
 /*
