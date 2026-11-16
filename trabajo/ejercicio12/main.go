@@ -67,7 +67,12 @@ NombrePadre(quesos)  -> "Lácteos"
 NombrePadre(lacteos) -> ""
 */
 func NombrePadre(c Categoria) string {
+	if c.Padre != nil {
+		return c.Padre.Nombre
+	}
+
 	return ""
+
 }
 
 func main() {
