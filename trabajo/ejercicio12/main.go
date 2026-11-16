@@ -47,7 +47,12 @@ para que se pueda escribir en él sin que el programa se detenga.
 Ej: b := NewBodega("Central"); b.Stock["Leche"] = 5 -> funciona
 */
 func NewBodega(nombre string) Bodega {
-	return Bodega{}
+
+	b := Bodega{
+		Nombre: nombre,
+		Stock:  make(map[string]int),
+	}
+	return b
 }
 
 /*
